@@ -1,0 +1,25 @@
+<header class="header">
+    <nav class="header-nav">
+        <div class="brandTitle"><a href="/">Simple CRUD</a></div>
+        <a class="toggle-hamburger-btn" href="#">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+
+        <div class="nav-links">
+            <ul>
+                <!-- Making the appropriate links only appear at appropriate places -->
+                <% if(locals.isLoggedIn) { %>
+                
+                <li><a href="/users/logout"> Logout </a></li>
+                <li><a href="/users/"> Users </a></li>
+
+                <% } else { %> 
+                <li><a href="/users/login"> Login </a></li>
+                <li><a href="/users/new"> Register </a></li>
+                <% } %>
+            </ul>
+        </div>
+    </nav>
+</header>

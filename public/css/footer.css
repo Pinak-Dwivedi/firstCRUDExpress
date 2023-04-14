@@ -1,0 +1,77 @@
+.footer
+{
+    /* flex-grow: 1; */
+    /* background-color: #333; */
+
+    background-image: url('/images/cover2.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    border-top: 1px solid white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem;
+}
+
+.footer .brandQuote
+{
+    color:white;
+    font-size: 1.1rem;
+}
+
+.footer .socialMedia img
+{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    /* border: .3rem solid #333; */
+    padding: .1rem;
+    margin: .1rem 1rem;
+    background-color: white;
+}
+
+.footer .socialMedia ul
+{
+    list-style: none;
+    display: flex;
+}
+
+.footer .socialMedia li
+{
+    margin:0rem .5rem;
+}
+
+.footer .socialMedia li:hover
+{
+    background-color: #555;
+}
+
+@media (max-width: 600px)
+{
+    html
+    {
+        font-size: 80%;
+    }
+}
+
+@media(max-width: 370px)
+{
+    .footer
+    {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer .socialMedia
+    {
+        width: 100%;
+    }
+
+    .footer .socialMedia ul
+    {
+        justify-content: space-between;
+    }
+}
+

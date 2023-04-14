@@ -1,0 +1,187 @@
+/* Carousel */
+
+.carousel
+{
+    width: 100%;
+    height: 60vh;
+    position: relative;
+    border: .1rem solid white;
+}
+
+.carousel .slide-image
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: 1000ms opacity;
+    transition-delay: 500ms;
+}
+
+.carousel .slide-image[data-active]
+{
+    opacity: 1;
+    transition-delay: 0ms;
+}
+
+.carousel .slide-button
+{
+    font-size: 3rem;
+    color:white;
+    background: none;
+    border: none;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    z-index: 1;
+    cursor: pointer;
+    padding: .5rem;
+}
+
+.carousel .slide-button:hover
+{
+    background-color: rgba(255, 255, 255, .3);
+}
+
+.carousel .prev-slide-button
+{
+    left: 1%;
+}
+
+.carousel .next-slide-button
+{
+    right: 1%;
+}
+
+
+.main-content
+{   
+    background-image: url('/images/cover2.png');
+    background-size: cover;
+    background-attachment:fixed;
+}
+
+.main-content .description
+{
+    padding: 1em;
+    color: whitesmoke;
+}
+
+.description-heading
+{
+    padding: 1em;
+}
+
+.description-para
+{
+    padding: 1em;
+}
+
+.description-para em
+{
+    color: white;
+    font-weight: bolder;
+}
+
+.main-content .about
+{
+    /* border: 1px solid black; */
+    display: grid;
+    padding: 2em;
+
+    /* border-top: 1px solid white;
+    border-bottom: 1px solid white; */
+
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 1.5rem;
+    grid-column-gap: 1.5rem;
+}
+
+.main-content .card
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    background-color: rgba(171, 171, 171, 0.3);
+    border-radius: 15px;
+    padding: .5em;
+}
+
+.main-content .card .card-image
+{
+    width: 100%;
+}
+
+.main-content .card .card-item
+{
+    padding: .1em 0;
+}
+
+.main-content .card .card-action-buttons
+{
+    /* setting width 100% to cancel the effect from align-items from parent so that the buttons take equal width */
+
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.main-content .card .card-action-buttons .card-button
+{
+    padding: .3em .5em;
+    /* margin: .3rem; */
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    /* flex-basis: 0;
+    flex-grow: 1; */
+    color: white;
+}
+
+.main-content .card .card-action-buttons .like-button
+{
+    background-color: rgb(246, 97, 37);
+}
+.main-content .card .card-action-buttons .follow-button
+{
+    background-color: rgb(49, 49, 240);
+}
+
+.one-punch-man-section
+{
+    padding: 1em;
+    color: white;
+}
+
+@media(max-width: 600px)
+{
+
+    .main-content .about
+    {
+        grid-template-columns: 1fr 1fr;       
+    }
+}
+
+@media(max-width: 370px)
+{
+    html
+    {
+        font-size: 70%;
+    }
+
+    .main-content .about
+    {
+        grid-template-columns: 1fr;       
+    }
+
+    .main-content .card .card-action-buttons .card-button 
+    {
+        padding: .3rem;    
+        /* margin: 1rem; */
+    }
+}
+
+

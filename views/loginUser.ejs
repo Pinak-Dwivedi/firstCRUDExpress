@@ -1,0 +1,38 @@
+<div class="user-form-container">
+
+    <div class="user-form-title">
+    Login
+    </div>
+
+    <form class="user-form" action="/users/login" method="POST">
+
+        <div>
+            <% if(locals.errMsg) { %>
+            <span class="login-error"><%= locals.errMsg %></span>
+            <% } %>
+        </div>
+
+        <div class="form-field">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-input" id="email" type="email" name="email" placeholder="Email" value="<%= locals.email %> ">
+
+            <% if(locals.errors) { %>
+            <% if(locals.errors.email) %>
+            <span class="form-error"><%= locals.errors.email %></span>
+            <% } %>
+            
+        </div>
+        
+        <div class="form-field">
+            <label class="form-label" for="password">Password</label>
+            <input class="form-input" id="password" type="password" name="password" placeholder="Password">
+
+            <% if(locals.errors) { %>
+            <% if(locals.errors.password) %>
+                <span class="form-error"><%= locals.errors.password %></span>
+            <% } %>
+        </div>
+        
+        <input class="form-submit-button form-input" type="submit">
+    </form>
+</div>

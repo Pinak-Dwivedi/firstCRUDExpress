@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First CRUD</title>
+    
+    <% if(locals.isAtUsersPage) { %>
+    <link rel="stylesheet" href="/css/users.css">
+    <% } %>
+
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+
+    <!-- 
+    Can also put conditions for loading update, create, login user forms but since I've added css of all these modules in one file, I just don't want to put so many conditions 
+    -->
+    <link rel="stylesheet" href="/css/create-login-updateUser.css">
+
+    <!-- Only adding this css file when on home page -->
+    <% if(locals.isAtHomePage) { %>
+    <link rel="stylesheet" href="/css/index.css">
+    <% } %>
+
+    <script defer src="/js/update-deleteUser.js"></script>
+    <script defer src="/js/header.js"></script>
+
+    <!-- Only adding this js file when on home page -->
+    <% if(locals.isAtHomePage) { %>
+    <script defer src="/js/index.js"></script>
+    <% } %>
+
+    <!-- Can also include js from the views -->
+    <!-- <script defer src="/js/index.js"></script> -->
+
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <%- body %>
+    <%- include('../partials/footer') %>
+
+</body>
+</html>

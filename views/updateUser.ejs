@@ -1,0 +1,29 @@
+<div class="user-form-container">
+
+    <div class="user-form-title">
+    UPDATE USER
+    </div>
+
+    <form class="user-form" id="updateUserForm">
+        
+        <div class="form-field">
+            <label class="form-label" for="userName">Name</label>
+            <input class="form-input" id="userName" type="text" name="name" placeholder="Name" value="<%= locals.name %>">
+        </div>
+        
+        <div class="form-field">
+            <label class="form-label" for="userProfession">Profession</label>
+            <input class="form-input" id="userProfession" type="text" name="profession" value="<%= locals.profession %>" placeholder="Profession">
+        </div>
+        
+        <input class="form-submit-button form-input" type="submit">
+
+    </form>
+
+</div>
+
+
+
+<script>
+    const userId = '<%- locals.id %>'
+</script>

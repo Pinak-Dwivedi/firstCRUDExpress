@@ -1,0 +1,69 @@
+<div class="user-form-container">
+
+    <div class="user-form-title">
+        CREATE USER
+    </div>
+
+        <form class="user-form" action="/users" method="POST">
+
+            <div class="form-field">
+                <label class="form-label" for="name">Name</label>
+                <input class="form-input" id="name" type="text" name="name" placeholder="Name" value="<%= locals.name %>">
+
+                <% if(locals.errors) { %>
+                <% if(locals.errors.name) %>
+                <span class="form-error"><%= locals.errors.name %></span>
+                <% } %>
+                
+            </div>
+
+            <div class="form-field">
+                <label class="form-label" for="email">Email</label>
+                <input class="form-input" id="email" type="email" name="email" placeholder="Email" value="<%= locals.email %>">
+                
+                <% if(locals.errors) { %>
+                <% if(locals.errors.email) %>
+                <span class="form-error"><%= locals.errors.email %></span>
+                <% } %>
+            </div>
+
+            <div class="form-field">
+                <label class="form-label" for="profession">Profession</label>
+                <input class="form-input" id="profession" type="text" name="profession" placeholder="Profession" value="<%= locals.profession %>" >
+
+                <% if(locals.errors) { %>
+                <% if(locals.errors.profession) %>
+                <span class="form-error" ><%= locals.errors.profession %></span>
+                <% } %>
+            </div>
+    
+            <div class="form-field">
+                <label class="form-label" for="password">Password</label>
+                <input class="form-input" id="password" type="password" name="password" placeholder="Password">
+
+                <% if(locals.errors) { %>
+                <% if(locals.errors.password) %>
+                <span class="form-error"><%= locals.errors.password %></span>
+                <% } %>
+            </div>
+    
+            <div class="form-field">
+                <label class="form-label" for="confirm-password">Confirm Password</label>
+                <input class="form-input" id="confirm-password" type="password" name="confirmPassword" placeholder="Confirm Password">
+
+                <% if(locals.errors) { %>
+                <% if(locals.errors.confirmPassword) %>
+                <span class="form-error"><%= locals.errors.confirmPassword %></span>
+                <% } %>
+            </div>
+            
+            <input class="form-submit-button form-input" type="submit">
+
+        </form>
+</div>
+
+<script>
+    "<% if(locals.errors) {%>"
+    console.log("<%= Object.keys(locals.errors )%>");
+    "<% } %>"
+</script>

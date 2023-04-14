@@ -1,0 +1,110 @@
+.user-form-container
+{
+    background-image: url('/images/cover2.png');
+    background-size: cover;
+    background-attachment:fixed;
+    background-position: center;
+    color: honeydew;
+    
+    /* flex-grow: 1; */
+    min-height: 80vh;
+
+}
+
+.user-form-title
+{
+    font-weight: bolder;
+    padding: 2rem 1rem 0 1rem;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.user-form
+{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.user-form .form-field
+{
+    margin: 1rem 0;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-areas: 
+    "field-title field-title"
+    "field-input field-error";
+    align-items: center;
+}
+
+.user-form .form-label
+{
+    grid-area: field-title;
+    padding: .5rem 0;
+}
+
+.user-form .form-input
+{
+    grid-area: field-input;
+
+    padding: .7rem; 
+    background: none;
+    border-radius: 1rem;
+    border: .3px solid #333;
+    color: #5be2ff;
+    font-size: 1.1rem;
+    outline: none;
+}
+
+.user-form .form-error
+{
+    grid-area: field-error;
+    color: red;
+    padding: 0 .5rem;
+}
+
+.login-error
+{
+    grid-area: field-error;
+    color: red;
+    /* padding: 0 .5rem; */
+    font-size: 1.1rem;
+}
+
+.user-form .form-submit-button
+{
+    align-self: center; 
+    padding: 1rem 3rem;
+    color: white;
+    border-color: rgba(255, 255, 255, .5)
+}
+
+.user-form .form-input::placeholder
+{
+    font-weight: 100;
+    color: white;
+    opacity: .7;
+}
+
+.user-form .form-input:hover
+{
+    opacity: .5;
+}
+
+@media(max-width: 600px)
+{
+    .user-form .form-field
+    {
+        grid-template-areas:
+        "field-title field-title"
+        "field-input field-input"
+        "field-error field-error";
+    }
+
+    .user-form .form-error
+    {
+        padding:1rem;
+    }
+}
