@@ -83,6 +83,7 @@ router.get('/logout', isAuthenticated, (req, res) => {
 
     //session
     req.session.destroy();
+    res.clearCookie('session.id')
 
     res.redirect('/users/login');
 });
