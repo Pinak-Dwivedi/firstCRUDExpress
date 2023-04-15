@@ -23,8 +23,8 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
     cookie: {
-        // httpOnly: true,
-        sameSite: process.env.NODE_ENV === "Development" ? "lax" : "none",
+        httpOnly: true,
+        // sameSite: process.env.NODE_ENV === "Development" ? "lax" : "none",
         secure: process.env.NODE_ENV === "Development" ? false : true,
         //by default session expires is set to session means tab or browser closes or server restarts
     }
