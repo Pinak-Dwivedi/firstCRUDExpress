@@ -41,7 +41,7 @@ module.exports = class User {
                 {    
                     if(err)
                     reject(err);
-
+                    
                     resolve(result);
                 });            
             }

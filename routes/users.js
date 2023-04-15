@@ -49,7 +49,6 @@ router.get('/new', (req, res) => {
     return res.redirect('/users/')
 
     res.render('createUser');
-    
 });
 
 
@@ -157,7 +156,7 @@ router.get('/', isAuthenticated, async (req, res) => {
 
 //Create New User
 
-router.post('/', isAuthenticated, (req, res) => {
+router.post('/', (req, res) => {
 
     // if(req.body.name != null && req.body.name.trim() != '' && req.body.profession != null && req.body.profession.trim() != '' && req.body.password != null && req.body.password.trim() != '')
     // {
@@ -179,6 +178,9 @@ router.post('/', isAuthenticated, (req, res) => {
     //     res.render('createUser', {errMsg : 'Please enter a valid name and profession'});
     // }
 
+    if(req.session.isAuthenticated)
+    return res.redirect('/users');
+    
     //validation using JOI
 
     const validationResult = validateCreateUser( req.body )
@@ -207,6 +209,13 @@ router.post('/', isAuthenticated, (req, res) => {
                     break;
             }
         }
+
+        res.render('createUser', {
+            name: validationResult.value.name,
+            email: validationResult.value.email,
+            profession: validationResult.value.profession,
+            errors,
+        })
     }
 
     //if no validation erros then checking if email is unique
